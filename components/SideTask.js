@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const SideTask = ({ item }) => {
+const SideTask = ({ item, onPress }) => {
   return (
-    <View style={styles.taskBox}>
+    <Pressable style={styles.taskBox} onPress={onPress}>
       <View
         style={{
           borderColor: "#6d98de",
@@ -15,7 +15,7 @@ const SideTask = ({ item }) => {
         <Text style={{ padding: 10, fontSize: 25 }}>{item.emoji}</Text>
       </View>
       <View>
-        <View style={{ flex: 1 }}>
+        <View>
           <Text
             style={{
               color: "white",
@@ -31,7 +31,7 @@ const SideTask = ({ item }) => {
             flex: 1,
             flexDirection: "row",
             alignItems: "center",
-            gap: 20,
+            gap: 5,
           }}
         >
           <Text style={{ color: "white" }}>
@@ -39,9 +39,10 @@ const SideTask = ({ item }) => {
             {item.level}
           </Text>
           <View
+            // progress bar
             style={{
               height: 10,
-              width: 100,
+              width: '50%',
               backgroundColor: "white",
               borderRadius: 25,
             }}
@@ -57,7 +58,7 @@ const SideTask = ({ item }) => {
           </View>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
@@ -70,6 +71,6 @@ const styles = StyleSheet.create({
     borderColor: "#6d98de",
     borderWidth: 1,
     borderRadius: 25,
-    width: "60%",
+    width: "49%",
   },
 });

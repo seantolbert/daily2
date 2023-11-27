@@ -5,8 +5,6 @@ import { globalStyles } from "../styles/globalStyles";
 const TaskDetailsScreen = () => {
   return (
     <View style={styles.container}>
-
-      
       {/* <Text>TaskDetails</Text>
       <Text>you will be able to set reminders for tasks on this page</Text>
       <Text>users can edit and delete tasks on this page as well</Text>

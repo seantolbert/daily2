@@ -1,7 +1,9 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import React from "react";
 import { globalStyles } from "../styles/globalStyles";
 import SideTask from "../components/SideTask";
+import ActiveTaskList from "../components/ActiveTaskList";
+import DateHeader from "../components/DateHeader";
 
 const DashboardScreen = () => {
   const data = [
@@ -66,36 +68,12 @@ const DashboardScreen = () => {
     },
   ];
 
-  const mainTask = data[0];
-  const sideTasks = data.shift();
-
   return (
-    <View style={styles.container}>
-      <View>
-        
-      </View>
-      <View>
-        {data.map((item, idx) => {
-          return <SideTask item={item} key={idx} />;
-        })}
-      </View>
-
-      {/* <Text>Dashboard</Text>
-      <Text>
-        + button in the center of the bottom tabs for adding a task this will
-        take you to the task creation tab
-      </Text>
-      <Text>
-        This page will display the current day's schedule by default in
-        chronological order
-      </Text>
-      
-      <Text>
-        each task will be selectable and marked complete from here OR open a
-        modal to the task details page to mark complete there
-      </Text>
-      <Text>list of tasks for today completed and uncompleted</Text> */}
-    </View>
+    <SafeAreaView style={styles.container}>
+      <DateHeader />
+    
+      <ActiveTaskList data={data} />
+    </SafeAreaView>
   );
 };
 
@@ -105,17 +83,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "flex-end",
     backgroundColor: "#171717",
-    gap: 5,
-  },
-  taskBox: {
-    flexDirection: "row",
-    gap: 10,
-    // padding: 10,
-    borderColor: "#6d98de",
-    borderWidth: 1,
-    borderRadius: 25,
-    width: "60%",
   },
 });
+
+// Dashboard
+
+//       + button in the center of the bottom tabs for adding a task this will
+//       take you to the task creation tab
+
+//       This page will display the current day's schedule by default in
+//       chronological order
+
+//       each task will be selectable and marked complete from here OR open a
+//       modal to the task details page to mark complete there
+
+//   list of tasks for today completed and uncompleted
