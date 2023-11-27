@@ -327,3 +327,61 @@ Remember, the effectiveness of rewards depends on the preferences and motivation
 
 Remember, the effectiveness of rewards depends on the preferences and motivations of your target audience. Consider conducting user surveys or feedback sessions to understand what types of rewards would be most appealing to your users.
 
+## Gradient Background Reward System
+
+For a reward system where users earn different color gradient backgrounds based on their consecutive task completion, you can structure it as follows:
+
+### Rewards:
+
+1. **Novice Gradient:**
+   - *Criteria:* Complete tasks for 3 consecutive days.
+   - *Reward:* Unlock the Novice Gradient background option.
+
+2. **Intermediate Gradient:**
+   - *Criteria:* Complete tasks for 7 consecutive days.
+   - *Reward:* Unlock the Intermediate Gradient background option.
+
+3. **Expert Gradient:**
+   - *Criteria:* Complete tasks for 14 consecutive days.
+   - *Reward:* Unlock the Expert Gradient background option.
+
+4. **Master Gradient:**
+   - *Criteria:* Complete tasks for 30 consecutive days.
+   - *Reward:* Unlock the Master Gradient background option.
+
+### Implementation:
+
+- **Home Screen:**
+  - Display the current gradient background based on the user's reward level.
+  - Indicate the user's current consecutive completion streak.
+
+- **Settings Screen:**
+  - Provide a section where users can preview and select different gradient backgrounds they have unlocked.
+
+- **Task Completion Mechanism:**
+  - Clearly communicate to the user when they've achieved a consecutive completion milestone.
+  - Provide reminders to encourage users to maintain their streak.
+
+### Motivation:
+
+- **Visual Progression:**
+  - Users experience a visual progression in the app's aesthetics, motivating them to maintain their streak.
+
+- **Personalization:**
+  - Users gain a sense of control and personalization by choosing backgrounds based on their achievements.
+
+- **Competitive Edge:**
+  - Users may strive to unlock higher-level gradients, adding a competitive and goal-oriented element.
+
+### Tips:
+
+- **Variety in Gradients:**
+  - Ensure a diverse range of visually appealing gradients to keep the reward system interesting.
+
+- **Clear Communication:**
+  - Clearly communicate the criteria for earning each gradient to maintain transparency.
+
+- **Celebratory Animations:**
+  - Implement celebratory animations or messages upon reaching consecutive completion milestones.
+
+This reward system integrates a visual element, allowing users to customize their app experience based on their task completion achievements. It adds a layer of personalization and accomplishment, encouraging users to build and maintain a consistent daily routine.
