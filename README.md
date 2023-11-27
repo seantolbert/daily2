@@ -166,3 +166,14 @@
 
 5. **Settings Tab:**
    - Navigates to the Settings/Preferences Screen, where users can customize the app's appearance.
+
+## ice box features
+
+1. redux
+
+2. react native modules to push tasks to icalendar and vice versa to prevent calendar conflicts
+   https://reactnative.dev/docs/native-modules-ios#create-a-calendar-native-module
+
+3. on a daily basis, the app will send a push notification to the device for daily summary of completed tasks
+
+4. web app and ipad compatibility
