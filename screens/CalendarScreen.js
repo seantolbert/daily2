@@ -9,6 +9,9 @@ const CalendarScreen = () => {
       <Text>
         view other tasks for previous and future days, whatever day you select
       </Text>
+      <Text>
+        https://blog.logrocket.com/create-customizable-shareable-calendars-react-native/
+      </Text>
     </View>
   );
 };
