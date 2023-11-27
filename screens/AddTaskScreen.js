@@ -1,8 +1,18 @@
 import { View, Text } from "react-native";
-import React from "react";
+import { useState } from "react";
 import { globalStyles } from "../styles/globalStyles";
 
 const AddTaskScreen = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [dueTime, setDueTime] = useState("");
+
+  const handleAddTask = () => {
+    console.log(title);
+    console.log(description);
+    console.log(dueTime);
+  };
+
   return (
     <View style={globalStyles.container}>
       <Text>AddTask</Text>
@@ -14,6 +24,7 @@ const AddTaskScreen = () => {
         option to set reminderfor task upon creation (also available on task
         details screen)
       </Text>
+      <Text>keyboard avoiding view</Text>
     </View>
   );
 };

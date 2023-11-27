@@ -1,5 +1,9 @@
 # Notes
 
+What if we had as many tasks as we want but to prevent us from going overboard we only had 6 tasks that would be "active" at the same time. These would get emojis that danced around like the pokemon when selected. That would implyb aleveliung system for each task. since we are after consistency, each level would be a consecutive day you compoleted the task. each day where you do not complete this task, you will lose 2 levels and your sctreak for that task. every level will have unique styling for the border and background.
+
+every 5 levels you would get an animation upgrade through the pokemon games? or maybe
+
 ## User Stories + Paths
 
 1.  As a user, I want to create a new daily task:
@@ -152,6 +156,8 @@
 
    - Navigates to the Home Screen, displaying the current day's tasks and schedule.
 
+<img src="https://i.imgur.com/pwylbm4.png"/>
+
 2. **Add Task Tab:**
 
    - Navigates to the Add Task Screen, allowing users to create new tasks.
@@ -160,9 +166,11 @@
 
    - Navigates to the Calendar/Date Picker Screen, enabling users to view tasks on different days.
 
-4. **Completed Tasks Tab:**
+4. **Profile Tab:**
 
    - Navigates to the Completed Tasks Screen, showing a list or summary of completed tasks.
+
+<img src="https://i.imgur.com/pwylbm4.png"/>
 
 5. **Settings Tab:**
    - Navigates to the Settings/Preferences Screen, where users can customize the app's appearance.
@@ -267,6 +275,89 @@ When designing a reward system, it's important to strike a balance between provi
 
 Remember, the effectiveness of rewards depends on the preferences and motivations of your target audience. Consider conducting user surveys or feedback sessions to understand what types of rewards would be most appealing to your users.
 
+## Gradient Background Reward System
+
+For a reward system where users earn different color gradient backgrounds based on their consecutive task completion, you can structure it as follows:
+
+### Rewards:
+
+1. **Novice Gradient:**
+
+   - _Criteria:_ Complete tasks for 3 consecutive days.
+   - _Reward:_ Unlock the Novice Gradient background option.
+
+2. **Intermediate Gradient:**
+
+   - _Criteria:_ Complete tasks for 7 consecutive days.
+   - _Reward:_ Unlock the Intermediate Gradient background option.
+
+3. **Expert Gradient:**
+
+   - _Criteria:_ Complete tasks for 14 consecutive days.
+   - _Reward:_ Unlock the Expert Gradient background option.
+
+4. **Master Gradient:**
+   - _Criteria:_ Complete tasks for 30 consecutive days.
+   - _Reward:_ Unlock the Master Gradient background option.
+
+### Implementation:
+
+- **Home Screen:**
+
+  - Display the current gradient background based on the user's reward level.
+  - Indicate the user's current consecutive completion streak.
+
+- **Settings Screen:**
+
+  - Provide a section where users can preview and select different gradient backgrounds they have unlocked.
+
+- **Task Completion Mechanism:**
+  - Clearly communicate to the user when they've achieved a consecutive completion milestone.
+  - Provide reminders to encourage users to maintain their streak.
+
+### Motivation:
+
+- **Visual Progression:**
+
+  - Users experience a visual progression in the app's aesthetics, motivating them to maintain their streak.
+
+- **Personalization:**
+
+  - Users gain a sense of control and personalization by choosing backgrounds based on their achievements.
+
+- **Competitive Edge:**
+  - Users may strive to unlock higher-level gradients, adding a competitive and goal-oriented element.
+
+### Tips:
+
+- **Variety in Gradients:**
+
+  - Ensure a diverse range of visually appealing gradients to keep the reward system interesting.
+
+- **Clear Communication:**
+
+  - Clearly communicate the criteria for earning each gradient to maintain transparency.
+
+- **Celebratory Animations:**
+  - Implement celebratory animations or messages upon reaching consecutive completion milestones.
+
+This reward system integrates a visual element, allowing users to customize their app experience based on their task completion achievements. It adds a layer of personalization and accomplishment, encouraging users to build and maintain a consistent daily routine.
+
+Task details page example
+<img src="https://i.imgur.com/eGj2fDK.jpg"/>
+
+Profile page for active skills section
+<img src="https://i.imgur.com/haZHKOE.jpg"/>
+
+Skill Lineup Page
+<img src="https://i.imgur.com/eGj2fDK.jpg"/>
+
+All Task lineup page
+<img src="https://i.imgur.com/pwylbm4.png"
+/>
+
+
+
 ## ice box features
 
 1. redux
@@ -280,108 +371,4 @@ Remember, the effectiveness of rewards depends on the preferences and motivation
 
 5. tha ability to form groups (like splitwise) and compete with tasks and challenges
 
-
-# chosen reward system
-
-## Additional Examples of Rewards
-
-1. **Exclusive Access:**
-   - *Reward:* Users gain access to exclusive features, content, or beta versions of the app.
-   - *Motivation:* Provides a sense of exclusivity and privilege for regular users.
-
-2. **Personalized Insights:**
-   - *Reward:* Users receive personalized insights or analytics based on their completed tasks and productivity.
-   - *Motivation:* Fosters self-awareness and encourages users to reflect on their productivity patterns.
-
-3. **Time Off or Breaks:**
-   - *Reward:* Users can earn short breaks or relaxation sessions within the app after completing a set number of tasks.
-   - *Motivation:* Promotes a healthy work-life balance and encourages periodic breaks.
-
-4. **Educational Content:**
-   - *Reward:* Users unlock access to educational content, articles, or tips related to productivity and personal development.
-   - *Motivation:* Enhances the user's knowledge and skills while using the app.
-
-5. **Virtual Pet or Plant:**
-   - *Reward:* Users can adopt a virtual pet or plant that thrives or evolves based on their task completion.
-   - *Motivation:* Appeals to users who enjoy nurturing and caring for virtual companions.
-
-6. **Custom App Themes:**
-   - *Reward:* Users unlock additional custom themes or color schemes for the app's interface.
-   - *Motivation:* Adds a visual incentive for users who enjoy personalizing their app experience.
-
-7. **Community Challenges:**
-   - *Reward:* Users participate in community-wide challenges, and successful participants receive recognition or special rewards.
-   - *Motivation:* Fosters a sense of community and collaboration among app users.
-
-8. **Group Rewards:**
-   - *Reward:* Users contribute to a group goal, and when achieved, everyone in the group receives a reward.
-   - *Motivation:* Encourages teamwork and social engagement within the app.
-
-9. **Integration with External Apps:**
-   - *Reward:* Users unlock integration with other productivity apps or services as a reward for consistent task completion.
-   - *Motivation:* Enhances the app's functionality and provides users with a more comprehensive productivity ecosystem.
-
-10. **Early Feature Access:**
-    - *Reward:* Users gain early access to upcoming features or beta releases of the app.
-    - *Motivation:* Rewards early adopters and enthusiasts who actively use the app.
-
-Remember, the effectiveness of rewards depends on the preferences and motivations of your target audience. Consider conducting user surveys or feedback sessions to understand what types of rewards would be most appealing to your users.
-
-## Gradient Background Reward System
-
-For a reward system where users earn different color gradient backgrounds based on their consecutive task completion, you can structure it as follows:
-
-### Rewards:
-
-1. **Novice Gradient:**
-   - *Criteria:* Complete tasks for 3 consecutive days.
-   - *Reward:* Unlock the Novice Gradient background option.
-
-2. **Intermediate Gradient:**
-   - *Criteria:* Complete tasks for 7 consecutive days.
-   - *Reward:* Unlock the Intermediate Gradient background option.
-
-3. **Expert Gradient:**
-   - *Criteria:* Complete tasks for 14 consecutive days.
-   - *Reward:* Unlock the Expert Gradient background option.
-
-4. **Master Gradient:**
-   - *Criteria:* Complete tasks for 30 consecutive days.
-   - *Reward:* Unlock the Master Gradient background option.
-
-### Implementation:
-
-- **Home Screen:**
-  - Display the current gradient background based on the user's reward level.
-  - Indicate the user's current consecutive completion streak.
-
-- **Settings Screen:**
-  - Provide a section where users can preview and select different gradient backgrounds they have unlocked.
-
-- **Task Completion Mechanism:**
-  - Clearly communicate to the user when they've achieved a consecutive completion milestone.
-  - Provide reminders to encourage users to maintain their streak.
-
-### Motivation:
-
-- **Visual Progression:**
-  - Users experience a visual progression in the app's aesthetics, motivating them to maintain their streak.
-
-- **Personalization:**
-  - Users gain a sense of control and personalization by choosing backgrounds based on their achievements.
-
-- **Competitive Edge:**
-  - Users may strive to unlock higher-level gradients, adding a competitive and goal-oriented element.
-
-### Tips:
-
-- **Variety in Gradients:**
-  - Ensure a diverse range of visually appealing gradients to keep the reward system interesting.
-
-- **Clear Communication:**
-  - Clearly communicate the criteria for earning each gradient to maintain transparency.
-
-- **Celebratory Animations:**
-  - Implement celebratory animations or messages upon reaching consecutive completion milestones.
-
-This reward system integrates a visual element, allowing users to customize their app experience based on their task completion achievements. It adds a layer of personalization and accomplishment, encouraging users to build and maintain a consistent daily routine.
+6. you could treat the tasks like the old retro pokemon ui when you were looking at your own pokemon lineup. This would make sure you could only have a stack of 6 daily tasks.
