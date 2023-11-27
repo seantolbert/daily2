@@ -2,7 +2,9 @@
 
 What if we had as many tasks as we want but to prevent us from going overboard we only had 6 tasks that would be "active" at the same time. These would get emojis that danced around like the pokemon when selected. That would implyb aleveliung system for each task. since we are after consistency, each level would be a consecutive day you compoleted the task. each day where you do not complete this task, you will lose 2 levels and your sctreak for that task. every level will have unique styling for the border and background.
 
-every 5 levels you would get an animation upgrade through the pokemon games? or maybe
+every 5 levels would get an evolution animation
+
+every time you skip a day that is set for daily, you lose 10% health iout of 100
 
 ## User Stories + Paths
 
@@ -344,7 +346,7 @@ For a reward system where users earn different color gradient backgrounds based 
 This reward system integrates a visual element, allowing users to customize their app experience based on their task completion achievements. It adds a layer of personalization and accomplishment, encouraging users to build and maintain a consistent daily routine.
 
 Task details page example
-<img src="https://i.imgur.com/eGj2fDK.jpg"/>
+<img src="https://i.imgur.com/tGMHcgC.jpg"/>
 
 Profile page for active skills section
 <img src="https://i.imgur.com/haZHKOE.jpg"/>
@@ -355,8 +357,6 @@ Skill Lineup Page
 All Task lineup page
 <img src="https://i.imgur.com/pwylbm4.png"
 />
-
-
 
 ## ice box features
 
