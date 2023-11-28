@@ -1,8 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import SideTask from "./SideTask";
+import { useNavigation } from "@react-navigation/native";
 
 const ActiveTaskList = ({ data }) => {
+  const nav = useNavigation();
+
+  const handlePress = () => {};
+
   return (
     <View style={styles.container}>
       <Text style={styles.sectionTitle}>Active Daily Tasks</Text>

@@ -1,9 +1,17 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const SideTask = ({ item, onPress }) => {
+  const nav = useNavigation();
+
+  const handlePress = () => {
+    console.log("yoyo");
+    nav.navigate("taskDetails", item);
+  };
+
   return (
-    <Pressable style={styles.taskBox} onPress={onPress}>
+    <Pressable style={styles.taskBox} onPress={handlePress}>
       <View
         style={{
           borderColor: "#6d98de",
@@ -42,7 +50,7 @@ const SideTask = ({ item, onPress }) => {
             // progress bar
             style={{
               height: 10,
-              width: '50%',
+              width: "50%",
               backgroundColor: "white",
               borderRadius: 25,
             }}

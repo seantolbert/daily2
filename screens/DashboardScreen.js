@@ -71,7 +71,6 @@ const DashboardScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <DateHeader />
-    
       <ActiveTaskList data={data} />
     </SafeAreaView>
   );
