@@ -372,3 +372,7 @@ All Task lineup page
 5. tha ability to form groups (like splitwise) and compete with tasks and challenges
 
 6. you could treat the tasks like the old retro pokemon ui when you were looking at your own pokemon lineup. This would make sure you could only have a stack of 6 daily tasks.
+
+7. possibly a daily quote section o the dashboard
+
+8. 

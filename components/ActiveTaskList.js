@@ -23,7 +23,9 @@ const ActiveTaskList = ({ data }) => {
       </View>
       <View>
         <Pressable>
-          <Text style={{ color: "white" }}>see all...</Text>
+          <Text style={{ color: "lightblue", textAlign: "right" }}>
+            see all...
+          </Text>
         </Pressable>
       </View>
     </View>
@@ -35,7 +37,7 @@ export default ActiveTaskList;
 const styles = StyleSheet.create({
   container: {
     gap: 5,
-    paddingHorizontal: 5,
+    // paddingHorizontal: 5,
     // borderWidth: 1,
     // borderColor: "#6d98de",
     borderRadius: 25,

@@ -29,7 +29,7 @@ const BottomTabGroup = () => {
     <BottomTab.Navigator screenOptions={{ headerShown: false }}>
       <BottomTab.Screen name="dashboard" component={DashboardScreen} />
       <BottomTab.Screen name="calendar" component={CalendarScreen} />
-      <BottomTab.Screen name="addtask" component={AddTaskScreen} />
+      <Stack.Screen name="addtask" component={AddTaskScreen} />
       <BottomTab.Screen name="profile" component={ProfileScreen} />
       <BottomTab.Screen name="settings" component={SettingsScreen} />
     </BottomTab.Navigator>

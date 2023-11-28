@@ -7,8 +7,8 @@ const Journal = ({ journalText, setJouralText }) => {
   const randomPrompt =
     prompts[randomCategory].prompts[Math.floor(Math.random() * 5)];
 
-  console.log(prompts[randomCategory].title);
-  console.log(randomPrompt);
+  // console.log(prompts[randomCategory].title);
+  // console.log(randomPrompt);
 
   return (
     <View style={styles.container}>
