@@ -102,6 +102,8 @@ const TaskDetailsScreen = () => {
         style={{
           borderRadius: 20,
           gap: 20,
+          minHeight: "50%",
+
           // justifyContent: "gap",
           // borderWidth: 1,
           // borderColor: "white",
@@ -132,10 +134,20 @@ const TaskDetailsScreen = () => {
             </Text>
           </Pressable>
         </View>
+        <Text
+          style={{
+            color: "white",
+            fontSize: 20,
+            textTransform: "uppercase",
+            letterSpacing: 10,
+          }}
+        >
+          Notes
+        </Text>
         <Text style={{ color: "white", padding: 20, fontSize: 20 }}>
           {params.description}
         </Text>
-
+        {/* 
         <Text
           style={{
             textTransform: "uppercase",
@@ -146,11 +158,11 @@ const TaskDetailsScreen = () => {
           Notes
         </Text>
 
-        <View>
+        <View style={{ gap: 20 }}>
           {notes.map((note) => (
             <Text style={{ color: "white" }}>{note}</Text>
           ))}
-        </View>
+        </View> */}
       </View>
     </SafeAreaView>
   );
@@ -160,9 +172,9 @@ export default TaskDetailsScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: "center",
     backgroundColor: "black",
+    flex: 1,
   },
   topSection: {
     borderWidth: 1,

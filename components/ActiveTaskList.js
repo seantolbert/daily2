@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import SideTask from "./SideTask";
 import { useNavigation } from "@react-navigation/native";
@@ -10,11 +10,21 @@ const ActiveTaskList = ({ data }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.sectionTitle}>Active Daily Tasks</Text>
+      <View>
+        <Text style={styles.sectionTitle}>Active Daily Tasks</Text>
+        <Pressable>
+          <Text>...</Text>
+        </Pressable>
+      </View>
       <View style={styles.taskList}>
         {data.map((item, idx) => {
           return <SideTask item={item} key={idx} />;
         })}
+      </View>
+      <View>
+        <Pressable>
+          <Text style={{ color: "white" }}>see all...</Text>
+        </Pressable>
       </View>
     </View>
   );
