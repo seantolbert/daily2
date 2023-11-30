@@ -1,4 +1,13 @@
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+  Dimensions,
+} from "react-native";
 import React, { useState } from "react";
 import { globalStyles } from "../styles/globalStyles";
 import SideTask from "../components/SideTask";
@@ -19,12 +28,15 @@ const DashboardScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <DateHeader />
+      <ScrollView automaticallyAdjustKeyboardInsets={true}>
+        <DateHeader />
 
-      <MainChart />
+        <MainChart />
 
-      <ActiveTaskList data={data} />
-      <Journal journalText={journalText} onChange={setJournalText} />
+        <ActiveTaskList data={data} />
+
+        <Journal journalText={journalText} onChange={setJournalText} />
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -33,9 +45,10 @@ export default DashboardScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    // justifyContent: "center",
+    minHeight: Dimensions.get("window").height,
     backgroundColor: "#171717",
+    flex: 1,
+    marginBottom: 200,
   },
 });
 
