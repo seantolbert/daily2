@@ -28,7 +28,11 @@ const DashboardScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView automaticallyAdjustKeyboardInsets={true}>
+      <ScrollView contentContainerStyle={{gap: 50}}
+      
+      automaticallyAdjustKeyboardInsets={true}
+      // automaticallyAdjustContentInsets={true}
+      >
         <DateHeader />
 
         <MainChart />

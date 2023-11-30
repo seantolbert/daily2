@@ -10,12 +10,12 @@ const ActiveTaskList = ({ data }) => {
 
   return (
     <View style={styles.container}>
-      <View>
+      {/* <View>
         <Text style={styles.sectionTitle}>Active Daily Tasks</Text>
         <Pressable>
           <Text>...</Text>
         </Pressable>
-      </View>
+      </View> */}
       <View style={styles.taskList}>
         {data.map((item, idx) => {
           return <SideTask item={item} key={idx} />;
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     // borderColor: "#6d98de",
     borderRadius: 25,
+    flex: 1
   },
   sectionTitle: {
     textTransform: "uppercase",

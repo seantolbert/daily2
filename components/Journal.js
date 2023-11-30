@@ -67,10 +67,11 @@ const Journal = ({ journalText, onChange }) => {
           textAlign: "center",
         }}
       >
-        Journal
+        Today's Journal
       </Text>
-      <ScrollView keyboardDismissMode="interactive">
-        <View style={{ padding: 10 }}>
+      {/* <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={50}> */}
+      <View style={{ padding: 10 }}>
+        <ScrollView keyboardDismissMode="interactive">
           <TextInput
             multiline
             value={journalText}
@@ -78,26 +79,31 @@ const Journal = ({ journalText, onChange }) => {
             placeholderTextColor="#656565"
             onChangeText={onChange}
             inputAccessoryViewId={inputAccessoryViewId}
-            style={{ fontSize: 15, color: "white" }}
-          />
-        </View>
-      </ScrollView>
-      <InputAccessoryView nativeID={inputAccessoryViewId}>
-        <View>
-          <Pressable
-            onPress={handleSubmit}
             style={{
-              padding: 10,
-              width: "100%",
-              borderColor: "lightblue",
-              borderRadius: 10,
-              borderWidth: 1,
+              fontSize: 18,
+              color: "white",
+              // height: Dimensions.get("window").height / 2,
             }}
-          >
-            <Text style={{ color: "lightblue" }}>Done</Text>
-          </Pressable>
-        </View>
-      </InputAccessoryView>
+          />
+        </ScrollView>
+        <Pressable
+          onPress={handleSubmit}
+          style={{
+            padding: 10,
+            width: "100%",
+            borderColor: "lightblue",
+            borderRadius: 10,
+            borderWidth: 1,
+            
+            // position: "absolute",
+            // bottom: 120,
+          }}
+        >
+          <Text style={{ color: "lightblue" }}>Done</Text>
+        </Pressable>
+      </View>
+
+      {/* </KeyboardAvoidingView> */}
     </View>
   );
 };
@@ -106,8 +112,8 @@ export default Journal;
 
 const styles = StyleSheet.create({
   container: {
-    // height: Dimensions.get("window").height,
-    height: 400,
+    height: Dimensions.get("window").height,
+    // height: 200,
     flex: 1,
   },
 });

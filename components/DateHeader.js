@@ -6,13 +6,14 @@ const weekDays = ["S", "M", "T", "W", "T", "F", "S"];
 
 const DateHeader = () => {
   return (
-    <View style={{ gap: 20, paddingBottom: 20 }}>
+    <View style={{ gap: 20 }}>
       <View
         style={{
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "flex-end",
           gap: 5,
+          flex: 1,
         }}
       >
         <Text

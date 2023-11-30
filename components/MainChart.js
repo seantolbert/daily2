@@ -8,9 +8,9 @@ const MainChart = () => {
         borderRadius: 10,
         borderWidth: 1,
         borderColor: "white",
-        height: "20%",
-        padding: 10,
+        padding: 20,
         justifyContent: "center",
+        flex: 1,
       }}
     >
       <Text style={{ color: "white" }}>
