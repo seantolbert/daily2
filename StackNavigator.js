@@ -8,6 +8,21 @@ import CalendarScreen from "./screens/CalendarScreen";
 import TaskDetailsScreen from "./screens/TaskDetailsScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SettingsScreen from "./screens/SettingsScreen";
+import Landing from "./screens/Landing";
+import Login from "./screens/Login";
+import Signup from "./screens/Signup";
+
+const AuthStack = createNativeStackNavigator();
+const AuthStackGroup = () => {
+  return (
+    <AuthStack.Navigator>
+      <AuthStack.Screen name="landing" component={Landing} />
+      <AuthStack.Screen name="login" component={Login} />
+      <AuthStack.Screen name="signup" component={Signup} />
+      <AuthStack.Screen name="main" component={HomeStackGroup} />
+    </AuthStack.Navigator>
+  );
+};
 
 const Stack = createNativeStackNavigator();
 const HomeStackGroup = () => {
@@ -39,7 +54,8 @@ const BottomTabGroup = () => {
 const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <HomeStackGroup />
+      {/* <HomeStackGroup /> */}
+      <AuthStackGroup />
     </NavigationContainer>
   );
 };

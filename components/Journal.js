@@ -7,15 +7,17 @@ import {
   TextInput,
   View,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { prompts } from "../data/prompts";
 import useRealTime from "../hooks/useRealTime";
 import { FontAwesome } from "@expo/vector-icons";
+import { DayContext } from "../context/DayContext";
 
 const Journal = ({ journalText, onChange }) => {
   const [prompt, setPrompt] = useState("");
 
-  const randomCategoryGlobal = Math.floor(Math.random() * (prompts.length - 1));
+  const { dispatch } = useContext(DayContext);
+
   useEffect(() => {
     const randomCategory = Math.floor(Math.random() * (prompts.length - 1));
     const initialPrompt =
@@ -23,20 +25,14 @@ const Journal = ({ journalText, onChange }) => {
     setPrompt(initialPrompt);
   }, []);
 
-  // const randomPrompt = () => {
-  //   setPrompt(prompts[Math.floor(Math.random() * 5)]);
-  //   return prompt;
-  // };
+  const { updateData } = useRealTime("users");
 
-  const { data, updateData } = useRealTime("users");
-
-  // console.log(data);
-  // uniqe data tbd
   const inputAccessoryViewId = "neat123";
 
   const handleSubmit = () => {
     const paragraphs = journalText.split("\n").map((p) => p.trim());
 
+    
     const journalEntries = [
       {
         id: 8767658765,
@@ -61,9 +57,12 @@ const Journal = ({ journalText, onChange }) => {
       },
     ];
 
+    console.log(journalText)
+    
+    dispatch({ type: "UPDATE_JOURNAL", payload: journalText });
     updateData(journalEntries);
   };
-
+  
   return (
     <View style={styles.container}>
       <Text

@@ -74,7 +74,7 @@ const DateHeader = () => {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "flex-end",
-          gap: 10
+          gap: 10,
         }}
       >
         <Text

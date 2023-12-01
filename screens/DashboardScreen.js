@@ -8,7 +8,7 @@ import {
   Platform,
   Dimensions,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { globalStyles } from "../styles/globalStyles";
 import SideTask from "../components/SideTask";
 import ActiveTaskList from "../components/ActiveTaskList";
@@ -16,21 +16,21 @@ import DateHeader from "../components/DateHeader";
 import Journal from "../components/Journal";
 import { data } from "../data/tasks";
 import MainChart from "../components/MainChart";
+import { DayContext } from "../context/DayContext";
 
 const DashboardScreen = () => {
   const [journalText, setJournalText] = useState("");
 
-  const handleJournalFocus = () => {
-    // once the journal section is focused,
-    // the screen scrolls up so the whole screen becomes
-    // like a notes screen from a new note
-  };
+  const { state } = useContext(DayContext);
+
+  // console.log(state.text)
+  // console.log(state)
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView automaticallyAdjustKeyboardInsets={true}>
-        <MainChart />
         <DateHeader />
+        <MainChart />
         <ActiveTaskList data={data} />
         <Journal journalText={journalText} onChange={setJournalText} />
       </ScrollView>

@@ -1,3 +1,6 @@
+<img src="https://i.imgur.com/Qa7xBmA.png" />
+For each user there are many Tasks, journal entries and days. Days are snapshots of which tasks were completed by midnight of that day and also have the id of tthat particular day's journal entry, since each day only gets one journal entry.
+
 # Notes
 
 What if we had as many tasks as we want but to prevent us from going overboard we only had 6 tasks that would be "active" at the same time. These would get emojis that danced around like the pokemon when selected. That would implyb aleveliung system for each task. since we are after consistency, each level would be a consecutive day you compoleted the task. each day where you do not complete this task, you will lose 2 levels and your sctreak for that task. every level will have unique styling for the border and background.
