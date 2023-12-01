@@ -1,19 +1,80 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
+import React, { useEffect, useState } from "react";
 
-const days = [1, 2, 3, 4, 5, 6, 7];
-const weekDays = ["S", "M", "T", "W", "T", "F", "S"];
+const weekDays = [
+  { label: "S", name: "Sunday" },
+  { label: "M", name: "Monday" },
+  { label: "T", name: "Tuesday" },
+  { label: "W", name: "Wednesday" },
+  { label: "T", name: "Thursday" },
+  { label: "F", name: "Friday" },
+  { label: "S", name: "Saturday" },
+];
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
 const DateHeader = () => {
+  const [dateParts, setDateParts] = useState({
+    dayOfWeek: "",
+    month: "",
+    dayOfMonth: "",
+    year: "",
+  });
+
+  useEffect(() => {
+    const intervalId = setInterval(updateDateTime, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const updateDateTime = () => {
+    updateDateParts();
+  };
+
+  const updateDateParts = () => {
+    const d = new Date();
+    const month = months[d.getMonth()];
+    const dayOfWeek = weekDays[d.getDay().name];
+    const year = d.getFullYear();
+    const dayOfMonth = d.getDate();
+
+    setDateParts({
+      dayOfWeek,
+      month,
+      dayOfMonth,
+      year,
+    });
+  };
+
   return (
-    <View style={{ gap: 20 }}>
+    <View
+      style={{
+        height: 100,
+        paddingHorizontal: 10,
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "flex-end",
+        gap: 10,
+      }}
+    >
       <View
         style={{
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "flex-end",
-          gap: 5,
-          flex: 1,
+          gap: 10
         }}
       >
         <Text
@@ -23,49 +84,61 @@ const DateHeader = () => {
             textTransform: "uppercase",
             letterSpacing: 10,
             fontWeight: "bold",
-            // textAlign: 'right'
           }}
         >
-          November
+          {dateParts.month}
         </Text>
-        {/* <Text style={{ color: "white" }}>
-          1<Text style={{ fontSize: 10 }}>st</Text>
-        </Text> */}
-        <Text style={{ color: "#8f8f8f" }}>2023</Text>
+        <Text
+          style={{
+            fontSize: 20,
+            color: "white",
+            textTransform: "uppercase",
+            letterSpacing: 10,
+            // fontWeight: "bold",
+          }}
+        >
+          {dateParts.dayOfMonth}
+        </Text>
+        <Text style={{ color: "#8f8f8f" }}>{dateParts.year}</Text>
       </View>
 
-      <View style={{ flexDirection: "row", gap: 20, padding: 20 }}>
+      <View
+        style={{
+          flexDirection: "row",
+          gap: 5,
+        }}
+      >
         {weekDays.map((wd, idx) => (
           <View
             style={{
-              padding: 10,
+              padding: 5,
               borderRadius: 10,
               borderWidth: 1,
               borderLeftColor: "white",
               borderTopColor: "white",
               alignItems: "center",
-              justifyContent: "space-evenly",
-              gap: 10,
+              backgroundColor: dateParts.dayOfWeek === wd.name && "white",
+              flex: 1,
             }}
             key={idx}
           >
-            <Text style={{ color: "white", fontWeight: "bold" }}>{wd}</Text>
-            <Text style={{ color: "white" }}>{days[idx]}</Text>
+            <Text
+              style={{
+                // color: "white",
+                color: dateParts.dayOfWeek === wd.name ? "black" : "white",
+
+                fontWeight: "bold",
+              }}
+            >
+              {wd.label}
+            </Text>
           </View>
         ))}
       </View>
-
-      {/* <View style={{ flexDirection: "row", gap: 20 }}>
-        {days.map((day) => (
-          <View style={{ padding: 5 }}>
-            <Text style={{ color: "white" }}>{day}</Text>
-          </View>
-        ))}
-      </View> */}
     </View>
   );
 };
 
 export default DateHeader;
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});

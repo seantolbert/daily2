@@ -28,17 +28,10 @@ const DashboardScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={{gap: 50}}
-      
-      automaticallyAdjustKeyboardInsets={true}
-      // automaticallyAdjustContentInsets={true}
-      >
-        <DateHeader />
-
+      <ScrollView automaticallyAdjustKeyboardInsets={true}>
         <MainChart />
-
+        <DateHeader />
         <ActiveTaskList data={data} />
-
         <Journal journalText={journalText} onChange={setJournalText} />
       </ScrollView>
     </SafeAreaView>
@@ -52,7 +45,7 @@ const styles = StyleSheet.create({
     minHeight: Dimensions.get("window").height,
     backgroundColor: "#171717",
     flex: 1,
-    marginBottom: 200,
+    // marginBottom: 200,
   },
 });
 

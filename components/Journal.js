@@ -1,7 +1,5 @@
 import {
   Dimensions,
-  InputAccessoryView,
-  KeyboardAvoidingView,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -9,14 +7,26 @@ import {
   TextInput,
   View,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { prompts } from "../data/prompts";
 import useRealTime from "../hooks/useRealTime";
+import { FontAwesome } from "@expo/vector-icons";
 
 const Journal = ({ journalText, onChange }) => {
-  const randomCategory = Math.floor(Math.random() * (prompts.length - 1));
-  const randomPrompt =
-    prompts[randomCategory].prompts[Math.floor(Math.random() * 5)];
+  const [prompt, setPrompt] = useState("");
+
+  const randomCategoryGlobal = Math.floor(Math.random() * (prompts.length - 1));
+  useEffect(() => {
+    const randomCategory = Math.floor(Math.random() * (prompts.length - 1));
+    const initialPrompt =
+      prompts[randomCategory].prompts[Math.floor(Math.random() * 5)];
+    setPrompt(initialPrompt);
+  }, []);
+
+  // const randomPrompt = () => {
+  //   setPrompt(prompts[Math.floor(Math.random() * 5)]);
+  //   return prompt;
+  // };
 
   const { data, updateData } = useRealTime("users");
 
@@ -54,8 +64,6 @@ const Journal = ({ journalText, onChange }) => {
     updateData(journalEntries);
   };
 
-  //   style={{ flex: 1 }}
-  // >
   return (
     <View style={styles.container}>
       <Text
@@ -69,20 +77,32 @@ const Journal = ({ journalText, onChange }) => {
       >
         Today's Journal
       </Text>
-      {/* <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={50}> */}
+
+      <View
+        style={{
+          flexDirection: "row",
+          padding: 10,
+          justifyContent: "space-between",
+        }}
+      >
+        <Text style={{ color: "white", width: "75%" }}>{prompt}</Text>
+        <Pressable>
+          <FontAwesome name="random" size={30} color="white" />
+        </Pressable>
+      </View>
       <View style={{ padding: 10 }}>
         <ScrollView keyboardDismissMode="interactive">
           <TextInput
             multiline
             value={journalText}
-            placeholder={randomPrompt}
+            placeholder="think here ..."
             placeholderTextColor="#656565"
             onChangeText={onChange}
             inputAccessoryViewId={inputAccessoryViewId}
             style={{
               fontSize: 18,
               color: "white",
-              // height: Dimensions.get("window").height / 2,
+              height: Dimensions.get("window").height / 3,
             }}
           />
         </ScrollView>
@@ -94,16 +114,11 @@ const Journal = ({ journalText, onChange }) => {
             borderColor: "lightblue",
             borderRadius: 10,
             borderWidth: 1,
-            
-            // position: "absolute",
-            // bottom: 120,
           }}
         >
           <Text style={{ color: "lightblue" }}>Done</Text>
         </Pressable>
       </View>
-
-      {/* </KeyboardAvoidingView> */}
     </View>
   );
 };
