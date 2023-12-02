@@ -1,18 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { auth, fs } from "../configs/firebase";
 import {
   createUserWithEmailAndPassword,
   updateProfile,
   signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-  //   sendEmailVerification
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
 export const useAuth = () => {
   const [signupError, setSignupError] = useState(null);
   const [loginError, setLoginError] = useState(null);
-  const [resetPassError, setResetPassError] = useState(null);
 
   const signup = async (email, password, username) => {
     const newUser = {
@@ -21,6 +18,7 @@ export const useAuth = () => {
       days: [],
       username: "",
       uid: "",
+      email: "",
     };
 
     try {
@@ -29,22 +27,31 @@ export const useAuth = () => {
         email,
         password
       );
-      await updateProfile(res.user, { username }).catch((err) =>
-        console.log("firebase '.catch' method: " + err.message)
-      );
-      const userRef = doc(fs, "users", res.user.uid);
-      await setDoc(userRef, { ...newUser, uid: res.user.uid });
-      console.log(
-        "username: " +
-          res.user.username +
-          "tasks: " +
-          tasks +
-          "journalEntries: " +
-          journalEntries
-      );
+      await updateProfile(response.user, { displayName: username });
+      const userRef = doc(fs, "users", response.user.uid);
+      await setDoc(userRef, {
+        ...newUser,
+        username,
+        email: response.user.email,
+        uid: response.user.uid,
+      });
     } catch (error) {
       setSignupError(error);
-      console.log("after catch method: " + error.message);
     }
+  };
+
+  const login = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      setLoginError(error);
+    }
+  };
+
+  return {
+    signup,
+    signupError,
+    login,
+    loginError,
   };
 };

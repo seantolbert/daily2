@@ -10,12 +10,7 @@ const ActiveTaskList = ({ data }) => {
 
   return (
     <View style={styles.container}>
-      {/* <View>
-        <Text style={styles.sectionTitle}>Active Daily Tasks</Text>
-        <Pressable>
-          <Text>...</Text>
-        </Pressable>
-      </View> */}
+     
       <View style={styles.taskList}>
         {data.map((item, idx) => {
           return <SideTask item={item} key={idx} />;

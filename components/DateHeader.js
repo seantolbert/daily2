@@ -11,6 +11,7 @@ const weekDays = [
   { label: "S", name: "Saturday" },
 ];
 
+
 const months = [
   "January",
   "February",
@@ -34,6 +35,7 @@ const DateHeader = () => {
     year: "",
   });
 
+  
   useEffect(() => {
     const intervalId = setInterval(updateDateTime, 1000);
     return () => clearInterval(intervalId);
@@ -46,7 +48,7 @@ const DateHeader = () => {
   const updateDateParts = () => {
     const d = new Date();
     const month = months[d.getMonth()];
-    const dayOfWeek = weekDays[d.getDay().name];
+    const dayOfWeek = weekDays[d.getDay()].name;
     const year = d.getFullYear();
     const dayOfMonth = d.getDate();
 

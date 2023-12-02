@@ -17,20 +17,17 @@ import Journal from "../components/Journal";
 import { data } from "../data/tasks";
 import MainChart from "../components/MainChart";
 import { DayContext } from "../context/DayContext";
+import { auth } from "../configs/firebase";
 
 const DashboardScreen = () => {
   const [journalText, setJournalText] = useState("");
 
   const { state } = useContext(DayContext);
 
-  // console.log(state.text)
-  // console.log(state)
-
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView automaticallyAdjustKeyboardInsets={true}>
         <DateHeader />
-        <MainChart />
         <ActiveTaskList data={data} />
         <Journal journalText={journalText} onChange={setJournalText} />
       </ScrollView>

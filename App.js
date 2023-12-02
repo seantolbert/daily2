@@ -1,15 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import StackNavigator from "./StackNavigator";
 import { AppProvider } from "./context/DayContext";
+import RootNavigation from "./navigation";
 
 export default function App() {
   return (
     <>
-      <AppProvider>
-        <StackNavigator />
-        <StatusBar style="light" />
-      </AppProvider>
+      <RootNavigation />
+      <StatusBar style="light" />
     </>
   );
 }
