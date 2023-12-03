@@ -10,7 +10,6 @@ const ActiveTaskList = ({ data }) => {
 
   return (
     <View style={styles.container}>
-     
       <View style={styles.taskList}>
         {data.map((item, idx) => {
           return <SideTask item={item} key={idx} />;
@@ -18,7 +17,10 @@ const ActiveTaskList = ({ data }) => {
       </View>
       <View>
         <Pressable>
-          <Text style={{ color: "lightblue", textAlign: "right" }}>
+          <Text
+            style={{ color: "lightblue", textAlign: "right" }}
+            onPress={() => nav.navigate("allTasks")}
+          >
             see all...
           </Text>
         </Pressable>
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     // borderColor: "#6d98de",
     borderRadius: 25,
-    flex: 1
+    flex: 1,
   },
   sectionTitle: {
     textTransform: "uppercase",

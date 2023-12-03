@@ -25,7 +25,7 @@ const Journal = ({ journalText, onChange }) => {
     setPrompt(initialPrompt);
   }, []);
 
-  const { updateData } = useRealTime("users");
+  // const { updateData } = useRealTime("users");
 
   const inputAccessoryViewId = "neat123";
 
@@ -56,8 +56,6 @@ const Journal = ({ journalText, onChange }) => {
         paragraphs,
       },
     ];
-
-    console.log(journalText)
     
     dispatch({ type: "UPDATE_JOURNAL", payload: journalText });
     updateData(journalEntries);

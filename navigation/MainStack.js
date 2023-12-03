@@ -8,6 +8,7 @@ import AddTaskScreen from "../screens/AddTaskScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import { AppProvider } from "../context/DayContext";
+import AllTasks from "../screens/AllTAsks";
 
 const Stack = createNativeStackNavigator();
 const HomeStackGroup = () => {
@@ -29,9 +30,10 @@ const BottomTabGroup = () => {
     <BottomTab.Navigator screenOptions={{ headerShown: false }}>
       <BottomTab.Screen name="dashboard" component={DashboardScreen} />
       <BottomTab.Screen name="calendar" component={CalendarScreen} />
-      <Stack.Screen name="addtask" component={AddTaskScreen} />
+      <BottomTab.Screen name="addtask" component={AddTaskScreen} />
       <BottomTab.Screen name="profile" component={ProfileScreen} />
       <BottomTab.Screen name="settings" component={SettingsScreen} />
+      <BottomTab.Screen name="allTasks" component={AllTasks} />
     </BottomTab.Navigator>
   );
 };

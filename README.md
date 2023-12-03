@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/Qa7xBmA.png" />
+<img src="https://i.imgur.com/h502q1y.png" />
 For each user there are many Tasks, journal entries and days. Days are snapshots of which tasks were completed by midnight of that day and also have the id of tthat particular day's journal entry, since each day only gets one journal entry.
 
 # Notes
@@ -162,6 +162,7 @@ every time you skip a day that is set for daily, you lose 10% health iout of 100
    - Navigates to the Home Screen, displaying the current day's tasks and schedule.
 
 <img src="https://i.imgur.com/pwylbm4.png"/>
+
 
 2. **Add Task Tab:**
 
