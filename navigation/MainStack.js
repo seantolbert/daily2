@@ -8,7 +8,7 @@ import AddTaskScreen from "../screens/AddTaskScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import { AppProvider } from "../context/DayContext";
-import AllTasks from "../screens/AllTAsks";
+import AllTasks from "../screens/AllTasks";
 
 const Stack = createNativeStackNavigator();
 const HomeStackGroup = () => {
@@ -27,13 +27,20 @@ const HomeStackGroup = () => {
 const BottomTab = createBottomTabNavigator();
 const BottomTabGroup = () => {
   return (
-    <BottomTab.Navigator screenOptions={{ headerShown: false }}>
+    <BottomTab.Navigator screenOptions={{ headerShown: false,  }}>
+      <BottomTab.Screen name="addtask" component={AddTaskScreen} />
       <BottomTab.Screen name="dashboard" component={DashboardScreen} />
       <BottomTab.Screen name="calendar" component={CalendarScreen} />
-      <BottomTab.Screen name="addtask" component={AddTaskScreen} />
       <BottomTab.Screen name="profile" component={ProfileScreen} />
       <BottomTab.Screen name="settings" component={SettingsScreen} />
-      <BottomTab.Screen name="allTasks" component={AllTasks} />
+      <BottomTab.Screen
+        name="allTasks"
+        component={AllTasks}
+        options={{
+          // tabBarShowLabel: false,
+          // tabBarLabel: false,
+        }}
+      />
     </BottomTab.Navigator>
   );
 };

@@ -11,7 +11,6 @@ const LoginScreen = () => {
   const handleSubmit = () => {
     login(email, password);
 
-    console.log(loginError);
   };
 
   return (

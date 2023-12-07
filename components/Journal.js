@@ -32,7 +32,6 @@ const Journal = ({ journalText, onChange }) => {
   const handleSubmit = () => {
     const paragraphs = journalText.split("\n").map((p) => p.trim());
 
-    
     const journalEntries = [
       {
         id: 8767658765,
@@ -56,63 +55,36 @@ const Journal = ({ journalText, onChange }) => {
         paragraphs,
       },
     ];
-    
+
     dispatch({ type: "UPDATE_JOURNAL", payload: journalText });
     updateData(journalEntries);
   };
-  
+
   return (
     <View style={styles.container}>
-      <Text
-        style={{
-          color: "white",
-          textTransform: "uppercase",
-          letterSpacing: 10,
-          fontSize: 15,
-          textAlign: "center",
-        }}
-      >
-        Today's Journal
-      </Text>
+      <Text style={styles.titleText}>Today's Journal</Text>
 
-      <View
-        style={{
-          flexDirection: "row",
-          padding: 10,
-          justifyContent: "space-between",
-        }}
-      >
-        <Text style={{ color: "white", width: "75%" }}>{prompt}</Text>
+      <View style={styles.promptContainer}>
+        <Text style={styles.promptText}>{prompt}</Text>
         <Pressable>
           <FontAwesome name="random" size={30} color="white" />
         </Pressable>
       </View>
       <View style={{ padding: 10 }}>
-        <ScrollView keyboardDismissMode="interactive">
-          <TextInput
-            multiline
-            value={journalText}
-            placeholder="think here ..."
-            placeholderTextColor="#656565"
-            onChangeText={onChange}
-            inputAccessoryViewId={inputAccessoryViewId}
-            style={{
-              fontSize: 18,
-              color: "white",
-              height: Dimensions.get("window").height / 3,
-            }}
-          />
-        </ScrollView>
-        <Pressable
-          onPress={handleSubmit}
+        <TextInput
+          multiline
+          value={journalText}
+          placeholder="think here ..."
+          placeholderTextColor="#656565"
+          onChangeText={onChange}
+          inputAccessoryViewId={inputAccessoryViewId}
           style={{
-            padding: 10,
-            width: "100%",
-            borderColor: "lightblue",
-            borderRadius: 10,
-            borderWidth: 1,
+            fontSize: 18,
+            color: "white",
+            height: Dimensions.get("window").height / 3,
           }}
-        >
+        />
+        <Pressable onPress={handleSubmit} style={styles.submitButton}>
           <Text style={{ color: "lightblue" }}>Done</Text>
         </Pressable>
       </View>
@@ -125,8 +97,27 @@ export default Journal;
 const styles = StyleSheet.create({
   container: {
     height: Dimensions.get("window").height,
-    // height: 200,
     flex: 1,
+  },
+  titleText: {
+    color: "white",
+    textTransform: "uppercase",
+    letterSpacing: 10,
+    fontSize: 15,
+    textAlign: "center",
+  },
+  promptContainer: {
+    flexDirection: "row",
+    padding: 10,
+    justifyContent: "space-between",
+  },
+  promptText: { color: "white", width: "75%" },
+  submitButton: {
+    padding: 10,
+    width: "100%",
+    borderColor: "lightblue",
+    borderRadius: 10,
+    borderWidth: 1,
   },
 });
 
